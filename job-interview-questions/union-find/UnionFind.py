@@ -32,7 +32,7 @@ class QuickUnion:
 
         self.id[i] = j
 
-class QuickUnionFast:
+class WeightedQuickUnion:
     def __init__(self, N):
         self.id = [i for i in range(N)]
         self.sz = [1 for i in range(N)]

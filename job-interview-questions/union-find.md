@@ -9,7 +9,15 @@ Social network connectivity. Given a social network containing N members and a l
 Answer 1
 --------
 
-...
+Solution: union-find/q1.py
+
+Input: union-find/q1.in
+
+The first line gives the number of test cases, **C**. **C** test cases follow. Each test case starts with a line containing a single integer **N**, the number of members in the social network. Next follows a line containing a single integer **M**, the number of formed friendships. **M** lines follow containing three space-separated integers: **A**, **B** and **T**. **A** and **B** represent the unique ID of a member in the social network (unique IDs range from **0** to **N-1**). **T** represents the timestamp at which **A** and **B** formed a friendship.
+
+Output: union-find/q1.out
+
+For each test case, a line contains the earliest time at which all members are connected.
 
 Question 2
 ----------

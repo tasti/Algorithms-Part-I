@@ -1,4 +1,35 @@
-import UnionFind
+from UnionFind import WeightedQuickUnion
+
+class UnionFindWithCount(WeightedQuickUnion):
+    def __init__(self, N):
+        super(UnionFindWithCount, self).__init__(N)
+
+        self.groups = N
+
+    def root(self, i):
+        return super(UnionFindWithCount, self).root(i)
+
+    def connected(self, p, q):
+        return super(UnionFindWithCount, self).connected(p, q)
+
+    def union(self, p, q):
+        i = self.root(p)
+        j = self.root(q)
+
+        if i == j:
+            return
+
+        if self.sz[i] < self.sz[j]:
+            self.id[i] = j
+            self.sz[j] += self.sz[i]
+        else:
+            self.id[j] = i
+            self.sz[i] += self.sz[j]
+
+        self.groups -= 1
+
+    def count(self):
+        return self.groups
 
 r = file('q1.in', 'r')
 w = file('q1.out', 'w')
@@ -9,7 +40,7 @@ for c in range(C):
     N = int(r.readline())
     M = int(r.readline())
 
-    socialNetwork = UnionFind.WeightedQuickUnion(N)
+    socialNetwork = UnionFindWithCount(N)
     done = False
 
     for m in range(M):
@@ -20,7 +51,7 @@ for c in range(C):
 
         socialNetwork.union(A, B)
 
-        if max(socialNetwork.sz) == N:
+        if socialNetwork.count() == 1:
             w.write('%d\n' % T)
             done = True
             break

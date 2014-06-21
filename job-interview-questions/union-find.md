@@ -17,7 +17,7 @@ The first line gives the number of test cases, **C**. **C** test cases follow. E
 
 Output: union-find/q1.out
 
-For each test case, a line contains the earliest time at which all members are connected.
+For each test case, a line contains the earliest time at which all members are connected or **"Never"** if there is no point at which all members are connected..
 
 Question 2
 ----------
@@ -25,6 +25,11 @@ Question 2
 Union-find with specific canonical element. Add a method find() to the union-find data type so that find(i) returns the largest element in the connected component containing i. The operations, union(), connected(), and find() should all take logarithmic time or better.
 
 For example, if one of the connected components is {1,2,6,9}, then the find() method should return 9 for each of the four elements in the connected components.
+
+Answer 2
+--------
+
+Solution: union-find/q2.py
 
 Question 3
 ----------
@@ -34,7 +39,17 @@ Remove x from S
 Find the successor of x: the smallest y in S such that y≥x.
 design a data type so that all operations (except construction) should take logarithmic time or better.
 
+Answer 3
+--------
+
+...
+
 Question 4
 ----------
 
 Union-by-size. Develop a union-find implementation that uses the same basic strategy as weighted quick-union but keeps track of tree height and always links the shorter tree to the taller one. Prove a lgN upper bound on the height of the trees for N sites with your algorithm.
+
+Answer 4
+--------
+
+Solution: union-find/q4.py

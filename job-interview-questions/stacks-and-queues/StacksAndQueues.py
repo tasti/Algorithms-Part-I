@@ -43,6 +43,7 @@ class Stack:
             lst.append(current.item)
             current = current.next
 
+        lst.reverse()
         return lst
 
 class Queue:

@@ -1,3 +1,7 @@
+import sys
+import os.path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../algorithms-and-data-structures'))
+
 from StacksAndQueues import Stack
 
 class QueueWithTwoStacks:

@@ -1,14 +1,18 @@
+import sys
+import os.path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../algorithms-and-data-structures'))
+
 from ElementarySorts import ShellSort
 
 def less(p, q):
     if p[0] < q[0]:
-        return 1
+        return -1
     elif p[0] > q[0]:
-        return -1
-    elif p[1] < q[1]:
         return 1
-    elif p[1] > q[1]:
+    elif p[1] < q[1]:
         return -1
+    elif p[1] > q[1]:
+        return 1
     else:
         return 0
 
@@ -21,9 +25,9 @@ def intersection(a, b):
 
     while (i < len(a)) and (j < len(b)):
         compare = less(a[i], b[j])
-        if compare > 0:
+        if compare < 0:
             i += 1
-        elif compare < 0:
+        elif compare > 0:
             j += 1
         else:
             aANDb.append(a[i])
